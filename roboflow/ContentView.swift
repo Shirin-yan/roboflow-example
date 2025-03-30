@@ -25,6 +25,9 @@ struct CameraView: UIViewControllerRepresentable {
 }
 
 class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+    
+    var colors: [UIColor] = [UIColor.red, UIColor.green, UIColor.yellow, UIColor.blue, UIColor.orange, UIColor.gray]
+    
     var captureSession = AVCaptureSession()
     var previewLayer: AVCaptureVideoPreviewLayer!
     let overlayView = UIView()
@@ -96,12 +99,29 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         objects.forEach { obj in
             let rect = scaleToFit(prediction: obj.detectedRect, originalSize: CGSize(width: obj.imgSize?.width ?? 0, height: obj.imgSize?.height ?? 0), displayFrame: videoBounds)
             let boundingBox = UIView(frame: rect)
-            boundingBox.layer.borderColor = UIColor.red.cgColor
+            boundingBox.layer.borderColor = obj.color.cgColor
             boundingBox.layer.borderWidth = 2
+
+
+            let label = UILabel()
+            label.text = "  \(obj.class)  " // Set your text
+            label.textColor = .black
+            label.font = UIFont.systemFont(ofSize: 14)
+            label.backgroundColor = .white
+            label.layer.cornerRadius = 20
+            label.layer.masksToBounds = true
+            label.textAlignment = .center
+            label.translatesAutoresizingMaskIntoConstraints = false
+
+            boundingBox.addSubview(label)
+            NSLayoutConstraint.activate([
+                label.topAnchor.constraint(equalTo: boundingBox.topAnchor, constant: -50), // Position above boundingBox
+                label.leadingAnchor.constraint(equalTo: boundingBox.leadingAnchor, constant: 10), // Align to left
+                label.heightAnchor.constraint(equalToConstant: 40),
+                label.widthAnchor.constraint(greaterThanOrEqualToConstant: 40) // Ensure minimum width
+            ])
+
             overlayView.addSubview(boundingBox)
-            
-            print(videoBounds)
-            print(rect)
         }
     }
 
@@ -156,9 +176,11 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
                 }
                 
                 let detectedObjects = response.predictions.compactMap { prediction in
-                    prediction.confidence < 0.7 ? nil : DetectedObject(
+                    /*prediction.confidence < 0.7 ? nil : */DetectedObject(
                             imgSize: response.image,
-                            detectedRect: CGRect(x: prediction.x-prediction.width/2, y: prediction.y-prediction.height/2, width: prediction.width, height: prediction.height)
+                            detectedRect: CGRect(x: prediction.x-prediction.width/2, y: prediction.y-prediction.height/2, width: prediction.width, height: prediction.height),
+                            class: prediction.class,
+                            color: self.colors.count > prediction.class_id ? self.colors[prediction.class_id] : .red
                         )
                     }
                     

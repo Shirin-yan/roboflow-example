@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct RoboflowResponse: Codable {
     let inference_id: String?
@@ -19,6 +20,8 @@ struct Prediction: Codable {
     let width: CGFloat
     let height: CGFloat
     let confidence: CGFloat
+    let class_id: Int
+    let `class`: String
 }
 
 struct ImageSize: Codable {
@@ -26,7 +29,9 @@ struct ImageSize: Codable {
     let height: CGFloat
 }
 
-struct DetectedObject: Codable {
+struct DetectedObject {
     let imgSize: ImageSize?
     let detectedRect: CGRect
+    let `class`: String
+    let color: UIColor
 }
