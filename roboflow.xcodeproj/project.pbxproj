@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B3FA8CA2D9D4ACA004D69DB /* KoMAC_01132-2_10_jpg.rf.06d5c70cad2c484fda0400ecac5945bd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B3FA8C92D9D4ACA004D69DB /* KoMAC_01132-2_10_jpg.rf.06d5c70cad2c484fda0400ecac5945bd.jpg */; };
 		8B5DFE032D94523500CF6EDE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5DFE022D94523500CF6EDE /* Model.swift */; };
 		8B5DFE052D9455E800CF6EDE /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8B5DFE042D9455E300CF6EDE /* video.mp4 */; };
 		8B86B7212D8A9DD90046896D /* roboflowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B86B7202D8A9DD90046896D /* roboflowApp.swift */; };
@@ -15,9 +16,11 @@
 		8B86B7292D8A9DDA0046896D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B86B7282D8A9DDA0046896D /* Preview Assets.xcassets */; };
 		8B86B7312D8A9FC70046896D /* Roboflow in Frameworks */ = {isa = PBXBuildFile; productRef = 8B86B7302D8A9FC70046896D /* Roboflow */; };
 		8B8C42242D8C1360002C60C5 /* img.webp in Resources */ = {isa = PBXBuildFile; fileRef = 8B8C42232D8C135F002C60C5 /* img.webp */; };
+		8BBDFBB82D9D50EA00ECDB05 /* KoMAC_01130-2_5_jpg.rf.e1d6303a9fc774398c5ce794f912e14a.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BBDFBB72D9D50EA00ECDB05 /* KoMAC_01130-2_5_jpg.rf.e1d6303a9fc774398c5ce794f912e14a.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B3FA8C92D9D4ACA004D69DB /* KoMAC_01132-2_10_jpg.rf.06d5c70cad2c484fda0400ecac5945bd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "KoMAC_01132-2_10_jpg.rf.06d5c70cad2c484fda0400ecac5945bd.jpg"; sourceTree = "<group>"; };
 		8B5DFE022D94523500CF6EDE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8B5DFE042D9455E300CF6EDE /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		8B7E258B2D967E7B003C7842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		8B86B7262D8A9DDA0046896D /* roboflow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = roboflow.entitlements; sourceTree = "<group>"; };
 		8B86B7282D8A9DDA0046896D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8B8C42232D8C135F002C60C5 /* img.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = img.webp; sourceTree = "<group>"; };
+		8BBDFBB72D9D50EA00ECDB05 /* KoMAC_01130-2_5_jpg.rf.e1d6303a9fc774398c5ce794f912e14a.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "KoMAC_01130-2_5_jpg.rf.e1d6303a9fc774398c5ce794f912e14a.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +70,9 @@
 				8B86B7202D8A9DD90046896D /* roboflowApp.swift */,
 				8B86B7222D8A9DD90046896D /* ContentView.swift */,
 				8B86B7242D8A9DDA0046896D /* Assets.xcassets */,
+				8B3FA8C92D9D4ACA004D69DB /* KoMAC_01132-2_10_jpg.rf.06d5c70cad2c484fda0400ecac5945bd.jpg */,
 				8B8C42232D8C135F002C60C5 /* img.webp */,
+				8BBDFBB72D9D50EA00ECDB05 /* KoMAC_01130-2_5_jpg.rf.e1d6303a9fc774398c5ce794f912e14a.jpg */,
 				8B5DFE042D9455E300CF6EDE /* video.mp4 */,
 				8B86B7262D8A9DDA0046896D /* roboflow.entitlements */,
 				8B86B7272D8A9DDA0046896D /* Preview Content */,
@@ -146,7 +152,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BBDFBB82D9D50EA00ECDB05 /* KoMAC_01130-2_5_jpg.rf.e1d6303a9fc774398c5ce794f912e14a.jpg in Resources */,
 				8B86B7292D8A9DDA0046896D /* Preview Assets.xcassets in Resources */,
+				8B3FA8CA2D9D4ACA004D69DB /* KoMAC_01132-2_10_jpg.rf.06d5c70cad2c484fda0400ecac5945bd.jpg in Resources */,
 				8B5DFE052D9455E800CF6EDE /* video.mp4 in Resources */,
 				8B8C42242D8C1360002C60C5 /* img.webp in Resources */,
 				8B86B7252D8A9DDA0046896D /* Assets.xcassets in Resources */,

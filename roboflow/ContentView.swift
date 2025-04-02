@@ -26,7 +26,7 @@ struct CameraView: UIViewControllerRepresentable {
 
 class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
-    var colors: [UIColor] = [UIColor.red, UIColor.green, UIColor.yellow, UIColor.blue, UIColor.orange, UIColor.gray]
+    var colors: [UIColor] = [UIColor.red, UIColor.gray, UIColor.yellow, UIColor.blue, UIColor.green]
     
     var captureSession = AVCaptureSession()
     var previewLayer: AVCaptureVideoPreviewLayer!
@@ -148,14 +148,14 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     }
 
     func sendImageToRoboflow(image: UIImage) {
-        if date+1 >= Date().timeIntervalSince1970 { return }
+        if date+0.8 >= Date().timeIntervalSince1970 { return }
         date = Date().timeIntervalSince1970
-        let imageData = image.jpegData(compressionQuality: 1)
+        let imageData = image.jpegData(compressionQuality: 0.7)
         let fileContent = imageData?.base64EncodedString()
         let postData = fileContent!.data(using: .utf8)
         
         // Initialize Inference Server Request with API KEY, Model, and Model Version
-        var request = URLRequest(url: URL(string: "https://detect.roboflow.com/two-arytenoids-samples/4?api_key=E7Q1AyuEh1RmcCCMEgGW&name=YOUR_IMAGE.jpg")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: "https://detect.roboflow.com/two-arytenoids-samples/4?api_key=E7Q1AyuEh1RmcCCMEgGW&name=\(date).jpg")!,timeoutInterval: Double.infinity)
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         request.httpBody = postData
